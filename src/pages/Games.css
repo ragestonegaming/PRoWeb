@@ -1,0 +1,16 @@
+/* src/pages/Games.css */
+.games {
+    padding: 2rem;
+  }
+  
+  .games-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Stack on smaller screens */
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  

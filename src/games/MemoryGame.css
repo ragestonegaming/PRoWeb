@@ -1,0 +1,82 @@
+/* src/games/MemoryGame.css */
+
+.memory-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.card-grid {
+  display: grid;
+  gap: 20px; /* Increased gap for better spacing */
+  margin-top: 20px;
+  justify-content: center; /* Center the grid */
+  grid-template-columns: repeat(4, 1fr); /* Fixed 4 columns for a square layout */
+  max-width: 600px; /* Set a max width for the grid */
+}
+
+.card {
+  width: 120px; /* Card width */
+  height: 120px; /* Card height */
+  background-color: #4CAF50; /* Card color */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Smooth transform */
+}
+
+.card.flipped {
+  background-color: #2196F3; /* Color when flipped */
+  transform: scale(1.1); /* Slightly scale up when flipped */
+}
+
+.score-lives {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 18px;
+  gap: 15px; /* Space between Score, High Score, and Lives sections */
+}
+
+.score-text,
+.high-score-text,
+.lives-text {
+  margin: 0 10px; /* Adds spacing around each text section */
+}
+
+.heart {
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.game-over, .game-completed {
+  margin-top: 20px;
+  text-align: center;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}

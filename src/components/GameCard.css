@@ -1,0 +1,37 @@
+/* src/components/GameCard.css */
+.game-card {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem;
+    width: 250px; /* Fixed width */
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .game-card:hover {
+    transform: scale(1.05); /* Scale on hover */
+  }
+  
+  .game-card h2 {
+    font-size: 1.5rem;
+  }
+  
+  .game-card p {
+    margin: 1rem 0;
+  }
+  
+  .game-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .game-card button:hover {
+    background-color: #0056b3;
+  }
+  
