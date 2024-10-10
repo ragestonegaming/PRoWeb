@@ -55,6 +55,7 @@ const FreeFlow = () => {
     setCompleted(false);
     setTimer(level * 5);
     setGameOver(false);
+    setGameStarted(true); // Start the game when starting a level
   };
 
   const generateDotPositions = (colorCount) => {
@@ -108,7 +109,6 @@ const FreeFlow = () => {
   };
 
   const handleStart = () => {
-    setGameStarted(true);
     startLevel(level);
   };
 
@@ -116,7 +116,6 @@ const FreeFlow = () => {
     setLevel((prevLevel) => prevLevel + 1);
     setTimer((prevLevel) => (prevLevel + 1) * 5);
     startLevel(level + 1);
-    setGameStarted(true);
   };
 
   const renderGrid = () => {

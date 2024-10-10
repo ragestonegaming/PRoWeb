@@ -2,19 +2,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-top: 20px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(9, 60px); /* 9 columns */
+  grid-template-columns: repeat(9, 60px);
+  grid-template-rows: repeat(9, 60px); /* 9 columns */
   grid-gap: 10px; /* Space between dots */
   margin: 20px 0; /* Margin for spacing */
   background-color: black; /* Background color for the grid */
   padding: 10px;
   border-radius: 8px; /* Rounded corners */
   border: 5px solid white; 
-  position: absolute;/* Border for visibility */
+  position: relative;/* Border for visibility */
 }
 
 .dot {
