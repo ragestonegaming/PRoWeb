@@ -7,7 +7,8 @@ import Games from './pages/Games';
 import Music from './pages/Music';
 import About from './pages/About';
 import MemoryGame from './games/MemoryGame'; 
-import FreeFlowGame from './games/FreeFlowGame';// Import the Memory Game component
+import FreeFlowGame from './games/FreeFlowGame';
+//import Minesweeper from './games/Minesweeper';// Import the Memory Game component
 
 import './App.css';
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/games" element={<Games />} />
             <Route path="/games/memory" element={<MemoryGame />} /> {/* Link to Memory Game */}
             <Route path="/games/freeflow" element={<FreeFlowGame />} /> {/* Link to Memory Game */}
+            
             <Route path="/music" element={<Music />} />
             <Route path="/about" element={<About />} />
           </Routes>

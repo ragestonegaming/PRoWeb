@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './FreeFlow.css';
 
-const gridSize = 9;
+const gridSize = 9; // 9x9 grid
 const maxColorPairs = 40;
+
 const colors = [
   'red', 'green', 'blue', 'yellow', 'purple', 'orange', 'cyan', 'magenta',
   'pink', 'lime', 'teal', 'brown', 'maroon', 'olive', 'navy', 'violet',
@@ -17,9 +18,9 @@ const FreeFlow = () => {
   const [selectedDots, setSelectedDots] = useState([]);
   const [lines, setLines] = useState([]);
   const [completed, setCompleted] = useState(false);
-  const [timer, setTimer] = useState(5); // Initial time for level 1
-  const [gameOver, setGameOver] = useState(false); // Track game over state
-  const [gameStarted, setGameStarted] = useState(false); // Track game started state
+  const [timer, setTimer] = useState(5);
+  const [gameOver, setGameOver] = useState(false);
+  const [gameStarted, setGameStarted] = useState(false);
 
   useEffect(() => {
     if (gameStarted && timer > 0) {
@@ -28,13 +29,13 @@ const FreeFlow = () => {
           if (prev <= 1) {
             clearInterval(timerId);
             setGameOver(true);
-            return 0; // Ensure timer does not go negative
+            return 0;
           }
           return prev - 1;
         });
       }, 1000);
 
-      return () => clearInterval(timerId); // Clear timer on unmount
+      return () => clearInterval(timerId);
     }
   }, [gameStarted, timer]);
 
@@ -52,8 +53,8 @@ const FreeFlow = () => {
     setLines([]);
     setSelectedDots([]);
     setCompleted(false);
-    setTimer(level * 5); // Set timer based on level (5 seconds per level)
-    setGameOver(false); // Reset game over state
+    setTimer(level * 5);
+    setGameOver(false);
   };
 
   const generateDotPositions = (colorCount) => {
@@ -72,7 +73,7 @@ const FreeFlow = () => {
   };
 
   const handleDotClick = (index) => {
-    if (!gameStarted) return; // Prevent dot click if game has not started
+    if (!gameStarted) return;
 
     const selectedColor = dots[index];
 
@@ -96,26 +97,26 @@ const FreeFlow = () => {
 
     if (uniqueColors.size === connectedColors.size) {
       setCompleted(true);
-      setGameStarted(false); // Stop the game when level is completed
+      setGameStarted(false);
     }
   };
 
   const resetGame = () => {
     setLevel(1);
-    setTimer(5); // Reset timer to 5 seconds for level 1
+    setTimer(5);
     startLevel(1);
   };
 
   const handleStart = () => {
-    setGameStarted(true); // Set game as started
-    startLevel(level); // Start the first level
+    setGameStarted(true);
+    startLevel(level);
   };
 
   const handleNextLevel = () => {
     setLevel((prevLevel) => prevLevel + 1);
-    setTimer((prevLevel) => (prevLevel + 1) * 5); // Increase timer for next level
+    setTimer((prevLevel) => (prevLevel + 1) * 5);
     startLevel(level + 1);
-    setGameStarted(true); // Start the new level
+    setGameStarted(true);
   };
 
   const renderGrid = () => {
@@ -164,13 +165,24 @@ const Line = ({ from, to }) => {
   const dotSize = 60;
   const offset = 10;
 
+  // Calculate the x and y positions for the from and to dots
   const fromX = (from % gridSize) * (dotSize + offset) + dotSize / 2;
   const fromY = Math.floor(from / gridSize) * (dotSize + offset) + dotSize / 2;
   const toX = (to % gridSize) * (dotSize + offset) + dotSize / 2;
   const toY = Math.floor(to / gridSize) * (dotSize + offset) + dotSize / 2;
 
   return (
-    <svg className="line" style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none' }}>
+    <svg
+      className="line"
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        pointerEvents: 'none',
+        width: '100%',
+        height: '100%',
+      }}
+    >
       <line x1={fromX} y1={fromY} x2={toX} y2={toY} stroke="white" strokeWidth="5" />
     </svg>
   );

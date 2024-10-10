@@ -3,45 +3,69 @@
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  position: relative; /* Allows absolute positioning of lines */
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(9, 60px); /* 9 columns */
-  grid-gap: 10px;
-  background-color: black; /* Black background for the grid */
+  grid-gap: 10px; /* Space between dots */
+  margin: 20px 0; /* Margin for spacing */
+  background-color: black; /* Background color for the grid */
   padding: 10px;
-  border-radius: 8px;
-  position: relative; /* To position the lines correctly */
-  border: 5px solid white; /* Add border to grid for visibility */
+  border-radius: 8px; /* Rounded corners */
+  border: 5px solid white; 
+  position: absolute;/* Border for visibility */
 }
 
 .dot {
   width: 60px;
   height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
+  border-radius: 50%; /* Make dots circular */
+  background-color: red; /* Dot color */
+  border: 2px solid white; /* Border color for grid lines */
   cursor: pointer;
-  border: 2px solid white; /* Border for each dot */
+  transition: transform 0.2s;
 }
 
+/* Optional: Hover effect for dots */
+.dot:hover {
+  transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+
+
+
 .selected {
-  border: 2px solid yellow; /* Highlight selected dots */
+  border: 2px solid white; /* Highlight selected dots */
 }
 
 .connected {
-  opacity: 0.5; /* Dim connected dots */
+  opacity: 0.7; /* Fade connected dots */
+}
+
+.completion-message,
+.game-over-message {
+  margin-top: 20px;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
 .line {
-  position: absolute; /* Lines positioned absolutely */
-}
-
-.completion-message {
-  margin-top: 20px;
-  font-size: 24px;
-  color: yellow;
+  position:absolute; 
+  pointer-events: none;/* Allow positioning over the grid */
 }
