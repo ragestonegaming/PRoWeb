@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './FreeFlow.css';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 const gridSize = 9; // 9x9 grid
 const maxColorPairs = 40;
 

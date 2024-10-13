@@ -1,14 +1,74 @@
-/* src/pages/Home.css */
+/* Home.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4f8; /* Soft background color */
+  font-family: 'Arial', sans-serif;
+}
+
 .home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .home-cards {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    padding: 2rem;
-  }
-  
+  text-align: center;
+  padding: 60px; /* Increased padding for better spacing */
+}
+
+h1 {
+  margin-bottom: 40px;
+  color: #333; /* Dark text for visibility */
+  font-size: 2.5rem; /* Larger font size for the header */
+  font-weight: bold; /* Bold header for emphasis */
+}
+
+.home-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px; /* Increased space between cards */
+}
+
+.card-link {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit color from parent */
+}
+
+.card {
+  background-color: #ffffff; /* Card background color */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  padding: 40px; /* Increased padding for larger cards */
+  width: 300px; /* Increased width for cards */
+  height: 200px; /* Fixed height for cards */
+  position: relative; /* Positioning context for pseudo-elements */
+  overflow: hidden; /* Prevent overflow of shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space elements within the card */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.card-title {
+  font-size: 2rem; /* Larger title */
+  font-weight: bold; /* Bold title */
+  margin: 0; /* No margin */
+}
+
+.card-description {
+  background-color: #f9f9f9; /* Light background for description box */
+  border-radius: 10px; /* Rounded corners for description box */
+  padding: 10px; /* Padding inside the description box */
+  color: #666; /* Gray color for description */
+  font-size: 1rem; /* Standard font size for description */
+  text-align: center; /* Center text in the description box */
+}
+
+/* Unique colors for each card */
+
+.description {
+  margin-top: 20px; /* Spacing above the description text */
+  font-size: 1.2rem; /* Standard font size for description */
+  color: #555; /* Slightly darker gray for better readability */
+}

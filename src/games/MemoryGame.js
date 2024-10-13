@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './MemoryGame.css';
 
+
 const initialLevels = [
   { level: 1, numCards: 4, gridSize: 2 }, // 4 cards (2x2)
   { level: 2, numCards: 8, gridSize: 4 }, // 8 cards (4x4)
