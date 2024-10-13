@@ -29,7 +29,7 @@ const soundsList = [
     //{ name: 'Wind Blowing', src: require('./assets/sounds/wind-blowing.mp3') },
     //{ name: 'Mountain Stream', src: require('./assets/sounds/mountain-stream.mp3') },
     //{ name: 'Distant Thunder', src: require('./assets/sounds/distant-thunder.mp3') },
-    //{ name: 'Soothing Flute Music', src: require('./assets/sounds/soothing-flute-music.mp3') },
+    { name: 'Soothing Flute Music', src: require('../assets/sounds/soothing-flute-music.mp3') },
     //{ name: 'Relaxing Harp Music', src: require('./assets/sounds/relaxing-harp-music.mp3') },
     { name: 'Ambient Chimes', src: require('../assets/sounds/ambient-chimes.mp3') },
     { name: 'Heartbeat Sounds', src: require('../assets/sounds/heartbeat-sounds.mp3') },
