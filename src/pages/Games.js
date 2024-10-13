@@ -5,8 +5,8 @@ import './Games.css';
 
 const gamesData = [
   { id: 1, name: "Memory Game", description: "Test your memory skills!", link: "/games/memory" },
-  { id: 2, name: "Free Flow Game", description: "Solve the puzzle!", link: "/games/freeflow" }
-  //{ id: 3, name: "Minesweeper", description: "Sweep the Mines", link: "/games/minesweeper" }
+  { id: 2, name: "Free Flow Game", description: "Solve the puzzle!", link: "/games/freeflow" },
+  { id: 3, name: "Breathing Bubble Game", description: "Breathe With Flow of Bubble", link: "/games/breathingbubble" }
   // Add more games as needed
 ];
 
